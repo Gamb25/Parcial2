@@ -75,49 +75,54 @@ void tablero::agregar_ficha(int _fila, int _columna, char _color)
 
 void tablero::mover_ficha(int _fila_actual,int _columna_actual,int _fila_destino,int _columna_destino,char _color)
 {
+    char _color_secundario;
+    if(_color=='-'){
+        _color_secundario='*';
 
+    }
+    else _color_secundario='-';
 
     if(matriz_tablero[_fila_actual][_columna_actual].get_color()==_color && matriz_tablero[_fila_destino][_columna_destino].get_color()=='\0'){
         if((_fila_destino<dimension_tablero && _fila_destino>=0)&&(_columna_destino<dimension_tablero && _columna_destino>=0)){
             /*CASO 1*/
-            if(_fila_destino==_fila_actual && _columna_destino==_columna_actual+2){
+            if(_fila_destino==_fila_actual && _columna_destino==_columna_actual+2 && matriz_tablero[_fila_actual][_columna_actual+1].get_color()==_color_secundario){
 
                 agregar_ficha(_fila_destino,_columna_destino,_color);
             }
             /*CASO 2*/
-            else if(_fila_destino==_fila_actual && _columna_destino==_columna_actual-2){
+            else if(_fila_destino==_fila_actual && _columna_destino==_columna_actual-2 && matriz_tablero[_fila_actual][_columna_actual-1].get_color()==_color_secundario){
 
                 agregar_ficha(_fila_destino,_columna_destino,_color);
             }
             /*CASO 3*/
-            else if(_fila_destino==_fila_actual-2 && _columna_destino==_columna_actual){
+            else if(_fila_destino==_fila_actual-2 && _columna_destino==_columna_actual && matriz_tablero[_fila_actual-1][_columna_actual].get_color()==_color_secundario){
 
                 agregar_ficha(_fila_destino,_columna_destino,_color);
             }
             /*CASO 4*/
-            else if(_fila_destino==_fila_actual+2 && _columna_destino==_columna_actual){
+            else if(_fila_destino==_fila_actual+2 && _columna_destino==_columna_actual && matriz_tablero[_fila_actual+1][_columna_actual].get_color()==_color_secundario){
 
                 agregar_ficha(_fila_destino,_columna_destino,_color);
             }
             /*CASO 5*/
-            else if(_fila_destino==_fila_actual-2 && _columna_destino==_columna_actual-2){
+            else if(_fila_destino==_fila_actual-2 && _columna_destino==_columna_actual-2 && matriz_tablero[_fila_actual-1][_columna_actual-1].get_color()==_color_secundario){
 
                 agregar_ficha(_fila_destino,_columna_destino,_color);
             }
             /*CASO 6*/
-            else if(_fila_destino==_fila_actual+2 && _columna_destino==_columna_actual-2){
+            else if(_fila_destino==_fila_actual+2 && _columna_destino==_columna_actual-2 && matriz_tablero[_fila_actual+1][_columna_actual-1].get_color()==_color_secundario){
 
                 agregar_ficha(_fila_destino,_columna_destino,_color);
             }
             /*CASO 7*/
-            else if(_fila_destino==_fila_actual+2 && _columna_destino==_columna_actual+2){
+            else if(_fila_destino==_fila_actual+2 && _columna_destino==_columna_actual+2 && matriz_tablero[_fila_actual+1][_columna_actual+1].get_color()==_color_secundario){
 
                 agregar_ficha(_fila_destino,_columna_destino,_color);
             }
             /*CASO 8*/
-            else if(_fila_destino==_fila_actual-2 && _columna_destino==_columna_actual+2){
+            else if(_fila_destino==_fila_actual-2 && _columna_destino==_columna_actual+2&& matriz_tablero[_fila_actual-1][_columna_actual+1].get_color()==_color_secundario){
 
-                agregar_ficha(_fila_destino,_columna_destino,_color);
+                agregar_ficha(_fila_destino,_columna_destino,_color );
             }
             else{
                 cout<<"No es un movimiento valido"<<endl;
