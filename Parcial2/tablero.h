@@ -12,6 +12,8 @@ public:
     ~tablero();
     void agregar_ficha(int _fila,int _columna,char _color);
     void mover_ficha(int _fila_actual,int _columna_actual,int _fila_destino,int _columna_destino,char _color);
+    bool metodo_busqueda_sandwich(int caso,int _fila_actual,int _columna_actual, int _fila_destino, int _columna_destino, char _color);
+    void cambio_color_sandwich(int caso, int _fila_destino,int _columna_destino,char _color);
     int get_dimension_tablero();
     void mostrar_matriz_tablero();
 
