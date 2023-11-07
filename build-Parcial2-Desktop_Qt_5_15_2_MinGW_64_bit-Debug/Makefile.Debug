@@ -110,10 +110,12 @@ compiler_clean:
 debug/ficha.o: ../Parcial2/ficha.cpp ../Parcial2/ficha.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\ficha.o ..\Parcial2\ficha.cpp
 
-debug/main.o: ../Parcial2/main.cpp 
+debug/main.o: ../Parcial2/main.cpp ../Parcial2/tablero.h \
+		../Parcial2/ficha.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\Parcial2\main.cpp
 
-debug/tablero.o: ../Parcial2/tablero.cpp ../Parcial2/tablero.h
+debug/tablero.o: ../Parcial2/tablero.cpp ../Parcial2/tablero.h \
+		../Parcial2/ficha.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\tablero.o ..\Parcial2\tablero.cpp
 
 ####### Install
