@@ -1293,6 +1293,7 @@ void tablero::partida( tablero juego)
         juego.mostrar_matriz_tablero();
         cout<<"deseas termina?, 's' para si, 'n' para no."<<endl;
         cin>>terminar;
+        cin.ignore();
         if(terminar=='s'){
             no_terminar=false;
         }
